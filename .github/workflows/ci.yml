@@ -34,14 +34,30 @@ jobs:
         name: vscode-equis-vsix
         path: "*.vsix"
 
-    - name: Publish to GitHub Releases
-      if: startsWith(github.ref, 'refs/tags/')
-      run: |
-        FILES=(*.vsix)
-        if [ -f "${FILES[0]}" ]; then
-          gh release upload ${{ github.ref_name }} "${FILES[@]}" --clobber || \
-          gh release create ${{ github.ref_name }} "${FILES[@]}" --title "Equis Extension ${{ github.ref_name }}" --generate-notes
-        fi
-      shell: bash
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  release:
+    name: Create GitHub Release
+    needs: [build]
+    if: startsWith(github.ref, 'refs/tags/')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: vscode-equis-vsix
+
+      - name: Publish to GitHub Releases
+        run: |
+          # The artifact is already downloaded into the current dir
+          FILES=(*.vsix)
+          if [ -f "${FILES[0]}" ]; then
+            gh release create ${{ github.ref_name }} "${FILES[@]}" \
+              --title "Equis Extension ${{ github.ref_name }}" \
+              --generate-notes || \
+            gh release upload ${{ github.ref_name }} "${FILES[@]}" --clobber
+          fi
+        shell: bash
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
