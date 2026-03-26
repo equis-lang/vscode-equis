@@ -14,6 +14,12 @@
   <img src="https://img.shields.io/badge/VS%20Code-%5E1.50.0-007ACC.svg" alt="VS Code">
 </p>
 
+<p align="center">
+  <a href="https://github.com/equis-lang/vscode-equis/actions/workflows/ci.yml">
+    <img src="https://github.com/equis-lang/vscode-equis/actions/workflows/ci.yml/badge.svg" alt="VS Code Extension CI">
+  </a>
+</p>
+
 ---
 
 The official Visual Studio Code extension for the **Equis** programming language — a systems language for building verifiable accounting systems with compile-time REA (Resource-Event-Agent) enforcement.
