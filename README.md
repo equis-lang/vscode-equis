@@ -12,6 +12,9 @@
   <img src="https://img.shields.io/badge/Version-v0.1.0-blue.svg" alt="Version">
   <img src="https://img.shields.io/badge/License-Apache%202.0-orange.svg" alt="License">
   <img src="https://img.shields.io/badge/VS%20Code-%5E1.50.0-007ACC.svg" alt="VS Code">
+  <a href="https://marketplace.visualstudio.com/items?itemName=equis-lang.vscode-equis-lang">
+    <img src="https://vsmarketplacebadge.apphb.com/version/equis-lang.vscode-equis-lang.svg" alt="Extension Version">
+  </a>
 </p>
 
 <p align="center">
@@ -49,6 +52,14 @@ Custom `.equis` file icons via the bundled icon theme.
 [Equis on VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=equis-lang.vscode-equis-lang)
 
 ## 📦 Installation
+
+### Quick Open
+Launch VS Code Quick Open (Ctrl+P), paste the following command, and press enter:
+```
+ext install equis-lang.vscode-equis-lang
+```
+
+### From VSIX (Local)
 
 ### From VSIX (Local)
 ```bash
