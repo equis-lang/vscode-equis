@@ -75,6 +75,36 @@ Then press `F5` in VS Code to launch the Extension Development Host.
 |---|---|---|---|
 | `equis.executablePath` | `string` | `""` | Absolute path to the `eq` executable. Leave empty to auto-detect from `~/.equis/bin/` or `PATH`. |
 
+## Project Structure
+
+```text
+vscode-equis/
+├── src/
+│   └── extension.ts              # LSP client & extension activation
+├── dist/
+│   ├── extension.js              # Compiled extension bundle
+│   └── extension.js.map
+├── .github/
+│   ├── workflows/
+│   │   └── ci.yml                # CI pipeline
+│   ├── ISSUE_TEMPLATE/
+│   │   ├── bug_report.md
+│   │   └── feature_request.md
+│   └── PULL_REQUEST_TEMPLATE.md
+├── equis.tmLanguage.json         # TextMate syntax highlighting grammar
+├── language-configuration.json   # Bracket matching, comments, auto-close
+├── equis-icons.json              # File icon theme for .equis files
+├── package.json                  # Extension manifest & contribution points
+├── tsconfig.json                 # TypeScript configuration
+├── logo.png
+├── logo.svg
+├── CODE_OF_CONDUCT.md
+├── CONTRIBUTING.md
+├── SECURITY.md
+├── LICENSE                       # Apache 2.0
+└── README.md
+```
+
 ## 🔗 Related
 
 - [Equis Language](https://github.com/equis-lang/equis) — Compiler, runtime, and standard library
