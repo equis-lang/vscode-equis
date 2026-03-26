@@ -1,0 +1,16 @@
+node_modules/
+out/
+dist/
+*.vsix
+
+.DS_Store
+Thumbs.db
+
+.vscode/
+.history/
+*.swp
+
+.gemini/
+.agents/
+.agent/
+brain/

@@ -1,0 +1,13 @@
+{
+    "iconDefinitions": {
+        "_equis_file": {
+            "iconPath": "./logo.svg"
+        }
+    },
+    "fileExtensions": {
+        "equis": "_equis_file"
+    },
+    "fileNames": {
+        "equis.config.json": "_equis_file"
+    }
+}

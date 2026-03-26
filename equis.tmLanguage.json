@@ -1,0 +1,127 @@
+{
+  "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+  "name": "Equis",
+  "fileTypes": ["equis"],
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#rea-constructs" },
+    { "include": "#storage" },
+    { "include": "#keywords" },
+    { "include": "#types" },
+    { "include": "#constants" },
+    { "include": "#functions" },
+    { "include": "#operators" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.equis",
+          "match": "//.*"
+        }
+      ]
+    },
+    "strings": {
+      "name": "string.quoted.double.equis",
+      "begin": "\"",
+      "end": "\"",
+      "patterns": [
+        {
+          "name": "constant.character.escape.equis",
+          "match": "\\\\."
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.float.equis",
+          "match": "\\b[0-9]+\\.[0-9]+\\b"
+        },
+        {
+          "name": "constant.numeric.integer.equis",
+          "match": "\\b[0-9]+\\b"
+        }
+      ]
+    },
+    "rea-constructs": {
+      "patterns": [
+        {
+          "name": "keyword.other.rea.equis",
+          "match": "\\b(Agent|Resource|Event|Commitment|Policy|Valuator|exchange|Exchange|transformation|Transformation)\\b"
+        },
+        {
+          "name": "keyword.other.flow.equis",
+          "match": "\\b(flow|logic|in|out|from|to|execute|reverse|evaluated_by|fulfills|roles|unit|decimals)\\b"
+        }
+      ]
+    },
+    "storage": {
+      "patterns": [
+        {
+          "name": "storage.type.equis",
+          "match": "\\b(fn|let|mut|struct|extern|interface|implements)\\b"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.equis",
+          "match": "\\b(if|else|while|for|return|use|break|continue|print|assert)\\b"
+        },
+        {
+          "name": "keyword.other.equis",
+          "match": "\\b(sys_panic)\\b"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "support.type.equis",
+          "match": "\\b(i64|f64|bool|ptr|string|int|void)\\b"
+        }
+      ]
+    },
+    "constants": {
+      "patterns": [
+        {
+          "name": "constant.language.equis",
+          "match": "\\b(true|false|null)\\b"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "entity.name.function.equis",
+          "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(?=\\()"
+        }
+      ]
+    },
+    "operators": {
+      "patterns": [
+        {
+          "name": "keyword.operator.comparison.equis",
+          "match": "==|!=|<=|>=|<|>"
+        },
+        {
+          "name": "keyword.operator.logical.equis",
+          "match": "&&|\\|\\||!"
+        },
+        {
+          "name": "keyword.operator.arithmetic.equis",
+          "match": "[+\\-*/%]"
+        },
+        {
+          "name": "keyword.operator.assignment.equis",
+          "match": "="
+        }
+      ]
+    }
+  },
+  "scopeName": "source.equis"
+}
