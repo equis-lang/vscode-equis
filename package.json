@@ -1,5 +1,5 @@
 {
-    "name": "vscode-equis",
+    "name": "vscode-equis-lang",
     "displayName": "Equis",
     "description": "Equis language support with native LSP.",
     "version": "0.1.0",
