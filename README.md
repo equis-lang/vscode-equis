@@ -45,6 +45,9 @@ Built-in LSP client that automatically connects to `eq lsp` for:
 ### File Icons
 Custom `.equis` file icons via the bundled icon theme.
 
+### Marketplace
+[Equis on VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=equis-lang.vscode-equis-lang)
+
 ## 📦 Installation
 
 ### From VSIX (Local)
