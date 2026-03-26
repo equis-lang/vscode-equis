@@ -11,4 +11,4 @@ We welcome contributions to the official IDE extension.
 Standard GitHub fork-and-PR workflow applies.
 
 ---
-Copyright (c) 2026 [mlintangmz](https://github.com/equis-lang)
+Copyright (c) 2026 [mlintangmz](https://github.com/mlintangmz2765)

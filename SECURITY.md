@@ -14,4 +14,4 @@ If you discover a potential security issue in the compiler or runtime—especial
 Instead, please send a detailed report to **lintangmaulanazulfan@gmail.com**. Include a minimal example that demonstrates the issue and allow us time to investigate and provide a fix before any public disclosure.
 
 ---
-Copyright (c) 2026 [mlintangmz](https://github.com/equis-lang)
+Copyright (c) 2026 [mlintangmz](https://github.com/mlintangmz2765)

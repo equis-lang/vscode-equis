@@ -3,7 +3,7 @@
     "displayName": "Equis",
     "description": "Equis language support with native LSP.",
     "version": "0.1.0",
-    "publisher": "mlintangmz",
+    "publisher": "equis-lang",
     "repository": {
         "type": "git",
         "url": "https://github.com/equis-lang/vscode-equis.git"
