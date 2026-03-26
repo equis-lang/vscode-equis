@@ -37,12 +37,11 @@ jobs:
     - name: Publish to GitHub Releases
       if: startsWith(github.ref, 'refs/tags/')
       run: |
-        for f in *.vsix; do
-          if [ -f "$f" ]; then
-            echo "Uploading $f..."
-            gh release upload ${{ github.ref_name }} "$f" --clobber
-          fi
-        done
+        FILES=(*.vsix)
+        if [ -f "${FILES[0]}" ]; then
+          gh release upload ${{ github.ref_name }} "${FILES[@]}" --clobber || \
+          gh release create ${{ github.ref_name }} "${FILES[@]}" --title "Equis Extension ${{ github.ref_name }}" --generate-notes
+        fi
       shell: bash
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
