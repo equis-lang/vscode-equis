@@ -3,12 +3,15 @@ name: VS Code Extension CI
 on:
   push:
     branches: [ main ]
+    tags: [ 'v*' ]
   pull_request:
     branches: [ main ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
     - uses: actions/checkout@v4
@@ -24,3 +27,17 @@ jobs:
 
     - name: Package extension
       run: npx @vscode/vsce package
+
+    - name: Upload VSIX Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: vscode-equis-vsix
+        path: "*.vsix"
+
+    - name: Publish to GitHub Releases
+      if: startsWith(github.ref, 'refs/tags/')
+      uses: softprops/action-gh-release@v1
+      with:
+        files: "*.vsix"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
